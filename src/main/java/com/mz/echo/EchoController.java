@@ -1,4 +1,4 @@
-package com.mz;
+package com.mz.echo;
 
 
 import org.slf4j.Logger;
