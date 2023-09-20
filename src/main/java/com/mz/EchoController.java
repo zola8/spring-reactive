@@ -16,11 +16,11 @@ public class EchoController {
     private static final Random RANDOM = new Random();
 
 
-    @GetMapping("/sync")
+    @GetMapping("/echo")
     public String sync(@RequestParam String str) throws InterruptedException {
-        int waiting = RANDOM.nextInt(3) + 3;
+        int waiting = RANDOM.nextInt(5) + 5;
 
-        LOGGER.info("... in:  {}, waiting: {} sec", str, waiting);
+        LOGGER.info("... in:  {}, waiting: {} sec; Thread ID: {}", str, waiting, Thread.currentThread().getId());
         Thread.sleep(waiting * 1000);
         LOGGER.info("... end: {}", str, waiting);
 

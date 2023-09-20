@@ -20,7 +20,7 @@ public class HttpClientAsynchronous {
             .version(HttpClient.Version.HTTP_2)
             .build();
 
-    private static final int MAX = 3;
+    private static final int MAX = 500;
 
 
     public static void main(String[] args) {
@@ -59,7 +59,7 @@ public class HttpClientAsynchronous {
     private static CompletableFuture<HttpResponse<String>> sendHttpRequest(String str) {
         HttpRequest request = HttpRequest.newBuilder()
                 .GET()
-                .uri(URI.create("http://localhost:8080/sync?str=" + str))
+                .uri(URI.create("http://localhost:8080/echo?str=" + str))
                 .build();
         CompletableFuture<HttpResponse<String>> response =
                 httpClient.sendAsync(request, HttpResponse.BodyHandlers.ofString());

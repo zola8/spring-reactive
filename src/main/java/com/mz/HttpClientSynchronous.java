@@ -33,7 +33,7 @@ public class HttpClientSynchronous {
 
     private static HttpResponse<String> sendHttpRequest(String str) {
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("http://localhost:8080/sync?str=" + str))
+                .uri(URI.create("http://localhost:8080/echo?str=" + str))
                 .build();
 
         HttpResponse<String> response = null;
